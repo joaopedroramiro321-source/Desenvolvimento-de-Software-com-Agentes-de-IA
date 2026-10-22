@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20T20:32:40.923Z",
+  "root": "C:\\Users\\João Pedro\\Desktop\\Projetos com Codex\\projetos\\atletica-unesp-dracena",
+  "mode": "triagem-estatica",
+  "files": [
+    "index.html",
+    "package.json",
+    "script.js",
+    "scripts/build.mjs",
+    "scripts/public-files.mjs",
+    "scripts/server.mjs",
+    "scripts/server.test.mjs",
+    "vercel.json"
+  ],
+  "findings": [],
+  "skipped": [],
+  "truncated": false,
+  "entriesVisited": 18,
+  "limitations": [
+    "Regras heurísticas: todos os achados exigem validação contextual.",
+    "Não consulta CVEs, histórico Git ou serviços de rede; não executa código.",
+    "Não segue links; ignora dependências, builds e arquivos acima de 512 KiB.",
+    "Não oferece proteção contra alterações concorrentes maliciosas no diretório; use cópia estável."
+  ]
+}

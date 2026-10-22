@@ -1,116 +1,66 @@
-# Desenvolvimento de Software com Agentes de IA
+# Tech Lead e equipe de desenvolvimento
 
-Ambiente de desenvolvimento organizado com cinco agentes de inteligência artificial no Codex: um **Tech Lead**, responsável pela coordenação, e quatro agentes especializados em **Back-end, Front-end, Cibersegurança e QA**.
+O ponto de entrada da equipe é esta pasta, **Projetos com Codex**.
+O [AGENTS.md](AGENTS.md) define o Tech Lead: ele recebe seu pedido, planeja,
+distribui tarefas aos especialistas, integra as entregas e apresenta o resultado.
+Você conversa com o Tech Lead na conversa principal.
 
-O projeto centraliza a interação do usuário no Tech Lead, que distribui as tarefas entre os especialistas e coordena suas contribuições ao longo do desenvolvimento.
+## Como usar
 
-## Objetivo
+Abra esta pasta principal no Codex e inicie uma conversa. Como a descoberta de
+instruções ocorre no início da sessão, para usar em uma conversa já aberta peça:
 
-Explorar a aplicação de agentes de IA no desenvolvimento de software, utilizando divisão de responsabilidades, documentação estruturada e manutenção de contexto para organizar o trabalho.
+> Leia o AGENTS.md da pasta principal e atue como meu Tech Lead.
 
-A proposta é apoiar diferentes etapas de um sistema, desde o planejamento técnico até a implementação, revisão de segurança e validação de qualidade.
+Depois descreva o que deseja:
 
-## Organização dos agentes
+> Planeje um sistema de estoque para minha loja. Defina o MVP, a arquitetura
+> e as etapas de implementação.
 
-| Agente | Responsabilidade |
-|---|---|
-| **Tech Lead** | Interpretar as solicitações, planejar o trabalho, distribuir tarefas e coordenar as entregas. |
-| **Back-end** | Desenvolver a lógica de negócio, APIs, integrações e acesso a dados. |
-| **Front-end** | Desenvolver interfaces, organizar componentes e integrar a experiência do usuário ao back-end. |
-| **Cibersegurança** | Revisar aspectos de segurança e identificar riscos nas implementações. |
-| **QA** | Validar requisitos, identificar falhas e apoiar os testes de qualidade. |
+> Construa o sistema conforme o plano e coordene os especialistas necessários.
 
-## Estrutura do projeto
+> No projeto X, investigue a lentidão, implemente melhorias e valide o resultado.
 
-A organização abaixo representa a estrutura lógica do ambiente. Os nomes das pastas podem variar conforme a configuração utilizada.
+> Continue o projeto X a partir do contexto e resolva as pendências.
 
-```text
-projeto/
-├── AGENTS.md
-├── CONTEXT.md
-├── MEMORY.md
-├── backend/
-│   ├── AGENTS.md
-│   ├── CONTEXT.md
-│   └── MEMORY.md
-├── frontend/
-│   ├── AGENTS.md
-│   ├── CONTEXT.md
-│   └── MEMORY.md
-├── cyber/
-│   ├── AGENTS.md
-│   ├── CONTEXT.md
-│   └── MEMORY.md
-└── qa/
-    ├── AGENTS.md
-    ├── CONTEXT.md
-    └── MEMORY.md
-```
+Pedidos de planejamento permanecem em planejamento; pedidos de construção
+incluem implementação e validação. Você não precisa escrever briefings individuais.
 
-O agente Tech Lead fica na pasta principal. Cada especialista possui uma subpasta com sua própria documentação.
+## Equipe
 
-## Documentação dos agentes
+| Papel | Configuração |
+| --- | --- |
+| Tech Lead | [AGENTS.md](AGENTS.md) |
+| Backend | [Engenheiro de Software/AGENTS.md](<Engenheiro de Software/AGENTS.md>) |
+| Front-end | [Front-end/AGENTS.md](Front-end/AGENTS.md) |
+| Qualidade | [Analista de Qualidade/AGENTS.md](<Analista de Qualidade/AGENTS.md>) |
+| Cybersegurança | [Analista de Cybersegurança/AGENTS.md](<Analista de Cybersegurança/AGENTS.md>) |
 
-Elaborei os arquivos **AGENTS.md**, **CONTEXT.md** e **MEMORY.md** de todos os agentes, com foco em organização profissional, clareza de responsabilidades e boas práticas de engenharia de software.
+O Tech Lead usa subagentes da sessão com as instruções desses especialistas.
+Coordena as dependências e evita edições simultâneas nos mesmos arquivos.
+Os relatórios retornam à conversa principal. Os especialistas existentes
+continuam disponíveis para uso direto em suas próprias pastas.
 
-### AGENTS.md
+## Projetos e memória de trabalho
 
-Define as instruções de atuação de cada agente, incluindo suas responsabilidades, padrões de trabalho e orientações para execução das tarefas.
+Novos sistemas coordenados pelo Tech Lead ficam em `projetos/<nome>/`, criada
+quando houver um pedido de implementação, ou no destino que você indicar.
+Projetos existentes permanecem em seus locais.
 
-### CONTEXT.md
+- [PROJETOS.md](PROJETOS.md): catálogo de sistemas coordenados.
+- `PLANO.md` no sistema: etapas, responsáveis, critérios de aceite e progresso.
+- `CONTEXTO.md` no sistema: decisões, comandos, verificações e pendências.
 
-Reúne o contexto necessário para o trabalho, como objetivos, requisitos, restrições e informações técnicas relevantes ao projeto.
+Os dois últimos registros são criados conforme a dimensão do trabalho.
+Eles ajudam a retomar uma sessão, mas precisam ser conferidos contra o código.
 
-### MEMORY.md
+## Funcionamento
 
-Registra decisões, progresso e pendências para apoiar a continuidade do trabalho entre sessões.
+Esta configuração usa as ferramentas e permissões da sessão do Codex; não exige
+instalar um novo runtime. A delegação depende da disponibilidade de subagentes.
+Se indisponíveis, o Tech Lead informa isso e executa os papéis sequencialmente.
+Não há serviço em segundo plano nem mudança de permissões globais.
 
-Esses arquivos fornecem uma base explícita para orientar os agentes. Sua consulta e atualização dependem das instruções e do fluxo de execução configurados.
-
-## Fluxo de trabalho
-
-1. O usuário apresenta uma demanda ao **Tech Lead**.
-2. O Tech Lead interpreta os requisitos e organiza as tarefas.
-3. As atividades são direcionadas aos agentes especializados.
-4. Os especialistas executam suas responsabilidades e reportam resultados.
-5. O Tech Lead coordena a integração das contribuições e os ajustes necessários.
-6. O contexto e as decisões são registrados para apoiar as próximas etapas.
-
-## Exemplo de solicitação
-
-> Desenvolva um sistema de controle financeiro com cadastro de entradas e saídas. Organize as tarefas de back-end e front-end, solicite uma revisão de segurança e coordene a validação dos requisitos com o agente de QA.
-
-O Tech Lead utiliza essa demanda como ponto de partida para planejar e coordenar o trabalho dos especialistas.
-
-## Como utilizar
-
-1. Disponibilize a estrutura de pastas no ambiente de trabalho do Codex.
-2. Revise os arquivos de instruções de cada agente.
-3. Preencha o contexto com os requisitos e as tecnologias do sistema que será desenvolvido.
-4. Configure a execução e a delegação entre os agentes conforme o ambiente utilizado.
-5. Inicie a interação pelo agente Tech Lead na pasta principal.
-6. Acompanhe as entregas e mantenha a documentação atualizada.
-
-**A estrutura de pastas, por si só, não executa nem conecta os agentes.** A coordenação depende da configuração do Codex e das instruções utilizadas no ambiente.
-
-## Competências aplicadas
-
-- Orquestração de agentes de inteligência artificial.
-- Engenharia de contexto e elaboração de instruções.
-- Documentação técnica.
-- Planejamento e distribuição de tarefas.
-- Organização de fluxos de desenvolvimento de software.
-- Integração de implementação, segurança e qualidade.
-
-## Aprendizados
-
-O projeto permitiu explorar como a especialização de agentes e a documentação de responsabilidades podem apoiar a organização do desenvolvimento de software.
-
-Também reforçou a importância de manter contexto, decisões e critérios de validação explícitos. As entregas dos agentes precisam ser revisadas e testadas para verificar se atendem aos requisitos do sistema.
-
-## Autor
-
-**João Pedro Ramiro**
-
-- [GitHub](https://github.com/joaopedroramiro321-source)
-- [LinkedIn](https://www.linkedin.com/in/joaopedroramiro/)
+Referências oficiais:
+[instruções por AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+e [subagentes](https://learn.chatgpt.com/docs/agent-configuration/subagents).

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20T13:22:50.738Z",
+  "root": "C:\\Users\\João Pedro\\Desktop\\Projetos com Codex\\Analista de Cybersegurança",
+  "mode": "triagem-estatica",
+  "files": [
+    "agent/agent.ts",
+    "agent/tools/read_project_file.ts",
+    "agent/tools/scan_project.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "src/cli.mjs",
+    "src/scanner.mjs",
+    "tests/scanner.test.mjs",
+    "tsconfig.json"
+  ],
+  "findings": [
+    {
+      "id": "SEC005-1",
+      "rule": "SEC005",
+      "severity": "media",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Inserção de HTML exige revisão",
+      "cwe": "CWE-79",
+      "file": "src/scanner.mjs",
+      "line": 24,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar controle da entrada e sanitização; preferir renderização como texto."
+    },
+    {
+      "id": "SEC001-2",
+      "rule": "SEC001",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Possível credencial literal",
+      "cwe": "CWE-798",
+      "file": "tests/scanner.test.mjs",
+      "line": 17,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar se é credencial real; remover do código e rotacionar se exposta."
+    },
+    {
+      "id": "SEC001-3",
+      "rule": "SEC001",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Possível credencial literal",
+      "cwe": "CWE-798",
+      "file": "tests/scanner.test.mjs",
+      "line": 18,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar se é credencial real; remover do código e rotacionar se exposta."
+    },
+    {
+      "id": "SEC004-4",
+      "rule": "SEC004",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Avaliação dinâmica de código",
+      "cwe": "CWE-95",
+      "file": "tests/scanner.test.mjs",
+      "line": 32,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar origem do argumento; substituir avaliação de código por parsing estrito."
+    },
+    {
+      "id": "SEC004-5",
+      "rule": "SEC004",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Avaliação dinâmica de código",
+      "cwe": "CWE-95",
+      "file": "tests/scanner.test.mjs",
+      "line": 42,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar origem do argumento; substituir avaliação de código por parsing estrito."
+    },
+    {
+      "id": "SEC004-6",
+      "rule": "SEC004",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Avaliação dinâmica de código",
+      "cwe": "CWE-95",
+      "file": "tests/scanner.test.mjs",
+      "line": 52,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar origem do argumento; substituir avaliação de código por parsing estrito."
+    },
+    {
+      "id": "SEC004-7",
+      "rule": "SEC004",
+      "severity": "alta",
+      "confidence": "heuristica",
+      "status": "suspeita",
+      "title": "Avaliação dinâmica de código",
+      "cwe": "CWE-95",
+      "file": "tests/scanner.test.mjs",
+      "line": 64,
+      "evidence": "Padrão detectado nesta linha; conteúdo omitido para evitar exposição de segredos.",
+      "recommendation": "Verificar origem do argumento; substituir avaliação de código por parsing estrito."
+    }
+  ],
+  "skipped": [
+    {
+      "file": "node_modules",
+      "reason": "Diretório excluído"
+    }
+  ],
+  "truncated": false,
+  "entriesVisited": 21,
+  "limitations": [
+    "Regras heurísticas: todos os achados exigem validação contextual.",
+    "Não consulta CVEs, histórico Git ou serviços de rede; não executa código.",
+    "Não segue links; ignora dependências, builds e arquivos acima de 512 KiB.",
+    "Não oferece proteção contra alterações concorrentes maliciosas no diretório; use cópia estável."
+  ]
+}
